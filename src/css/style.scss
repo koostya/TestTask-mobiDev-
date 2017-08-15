@@ -1,0 +1,124 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+@mixin col_pos($top, $left, $bg_color) {
+	top: $top;
+	left: $left;
+	background-color: $bg_color;
+}
+
+.canvas{
+	position: relative;
+	width: 500px;
+	height: 500px;
+	margin: 50px auto;
+	border: 2px solid rgba(0,0,0,.3);
+	box-shadow: 4px 4px 10px 2px rgba(0,0,0,.6);
+	&__inner{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&__colors{
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		transition: all .3s;
+		&:nth-child(2){
+			@include col_pos(125px, -50px, #000000);
+		}
+		&:nth-child(3){
+			@include col_pos(95px, -50px, #015666);
+		}
+		&:nth-child(4){
+			@include col_pos(65px, -50px, #44036F);
+		}
+		&:nth-child(5){
+			@include col_pos(35px, -50px, #A6A300);
+		}
+		&:nth-child(6){
+			@include col_pos(5px, -50px, #A65100);
+		}
+		&:nth-child(7){
+			@include col_pos(155px, -50px, #7F0055);
+		}
+		&:nth-child(8){
+			@include col_pos(185px, -50px, #04396C);
+		}
+		&:nth-child(9){
+			@include col_pos(215px, -50px, #008500);
+		}
+		&__selected{
+			position: absolute;
+			display: none;
+			top: 50%;
+			left: 50%;
+			transform: translate(-25px, -50%);
+			width: 10px;
+			height: 10px;
+			background: rgba(0,0,0,.7);
+			border-radius: 50%;
+		}
+	}
+	&__colors:hover{
+		width: 27px;
+		height: 27px;
+		cursor: pointer;
+	}
+	&__range{
+		position: absolute;
+		top: -40px;
+		left: 0;
+		width: 100%;
+	}
+	&__clear{
+		position: absolute;
+		bottom: 41px;
+    	left: -92px;
+		padding: 10px 30px 10px 30px;
+		background-color: #A60000; 
+		transform: rotate(-90deg);
+		color: #fff;
+		font-family: sans-serif;
+		font-weight: 600;
+		transition: all .3s;
+		&:hover{
+			cursor: pointer;
+			box-shadow: 0 3px 9px 0px rgba(0, 0, 0, 0.6);
+		}
+	}
+	&__paginations_buts_wrap{
+		position: absolute;
+		display: inline-block;
+		bottom: -60px;
+		left: 50%;
+		transform: translateX(-50%);
+		&__but{
+			position: relative;
+			display: inline-block;
+			font-family: sans-serif;
+			font-size: 40px;
+			color: black;
+			transition: all .3s;
+			user-select: none;
+			&:nth-child(1){
+				margin-right: 40px;
+			}
+			&:hover{
+				cursor: pointer;
+				&:nth-child(1){
+					margin-right: 45px;
+				}
+				&:nth-child(2){
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+}
+	
+
+
