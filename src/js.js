@@ -47,6 +47,7 @@ clear_but.addEventListener('click', () => {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	window.localStorage.clear();
 	images_array.splice(0, images_array.length);
+	current_image = 0;
 });
 
 range.addEventListener('change', () => {
